@@ -25,7 +25,6 @@ def prep(file_name):
     df['avg'] = (df.math + df.reading + df.writing) / 3
     df['passed'] = df.avg >= 60
 
-
     # Translate into numeric values
     df.gender.replace({'female': 1, 'male': 2}, inplace=True)
     df.lunch.replace({'standard': 1, 'free/reduced': 0}, inplace=True)
@@ -35,7 +34,6 @@ def prep(file_name):
     df.ple.replace({"some high school": 1, "high school": 1, \
         "some college": 2, "associate's degree": 2, \
         "bachelor's degree": 3, "master's degree": 4 }, inplace=True)
-
 
     return df.drop("passed", axis=1), df["passed"]
 
