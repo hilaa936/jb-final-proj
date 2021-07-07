@@ -9,10 +9,8 @@ predict = Blueprint('predict',__name__)
 def prediction_page():
     form = PredictForm()
     if form.validate_on_submit():
-
-        # field1=form.field1.data
-        # field2=form.field2.data
-        result=get_predict(form)
+        predictRow = form.getValues()
+        result=get_predict(predictRow)
         
         return  render_template('prediction.html',form=form, result=result)
 
