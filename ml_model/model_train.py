@@ -50,6 +50,10 @@ def save_model(model, output_file):
 
 
 if __name__ == '__main__':
+    print("Data preparation process has started...")
     x_train, y_train = prep("shared_vol/StudentsPerformance.csv")
+    print("Create DTC model and started training sequence...")
     DTC = train(x_train, y_train)
+    print("Save DTC model...")
     save_model(DTC, "shared_vol/DTC.p")
+    print("Done")
