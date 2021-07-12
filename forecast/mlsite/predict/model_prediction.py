@@ -1,15 +1,16 @@
 import pickle
 
 
-# MODEL_FILE = "shared_vol/rfc.p"
+MODEL_FILE = "shared_vol/DTC.p"
 
-# with open(MODEL_FILE, "rb") as f:
-#     RFC = pickle.load(f)
+with open(MODEL_FILE, "rb") as f:
+    RFC = pickle.load(f)
 
-# def predict(data):
-#     return RFC.predict([data])[0]
-
-
-def get_predict(predictRow):
+def predict(data):
     
-    return f'the prediction is bla bla bla {" ,".join(predictRow)}'
+    # return RFC.predict_proba([[2,0,3,1,5]])[0][1]
+    return RFC.predict_proba([data])[0][1]
+
+
+def get_predict(predictRow):  
+    return predict(predictRow)

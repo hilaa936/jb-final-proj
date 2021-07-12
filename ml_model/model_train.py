@@ -11,8 +11,8 @@ def prep(file_name):
     df = pd.read_csv(file_name, encoding="utf-8")
 
     # Rename columns
-    df['prep_course'] = df['test preparation course']
     df['ple'] = df['parental level of education']
+    df['prep_course'] = df['test preparation course']
     df["kind"] = df["race/ethnicity"]
     df['math'] = df['math score']
     df['reading'] = df['reading score']
@@ -35,6 +35,11 @@ def prep(file_name):
         "some college": 2, "associate's degree": 2, \
         "bachelor's degree": 3, "master's degree": 4 }, inplace=True)
 
+    # Removing Extra Features
+    df.drop(columns=['math', 'reading', 'writing', 'avg'], inplace=True)
+
+    print(df.columns)
+    # ['gender', 'lunch', 'ple', 'prep_course', 'kind', 'passed']
     return df.drop("passed", axis=1), df["passed"]
 
 
@@ -54,6 +59,7 @@ if __name__ == '__main__':
     x_train, y_train = prep("shared_vol/StudentsPerformance.csv")
     print("Create DTC model and started training sequence...")
     DTC = train(x_train, y_train)
+    print(DTC.predict_proba([[2,0,3,1,5]])[0][1])
     print("Save DTC model...")
     save_model(DTC, "shared_vol/DTC.p")
     print("Done")
