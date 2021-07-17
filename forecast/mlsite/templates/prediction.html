@@ -2,9 +2,16 @@
 content %}
 <div class="container">
   <h2> predict if you pass your exam </h2>
+  <h2>Will you pass the exam?</h2>
   <p>
-    fill youre data..
+    In the following section, you will be needed to fill you information,
+    so we can predict what will be your final score - To be exact, if you pass the exam or not.
+    We might be wrong, but we might also be right - So let's give it a chance.
   </p>
+  <br />
+  <h3>Please fill your information in the following form:</h3>
+
+
   <form method="POST" action="" enctype="multipart/form-data">
     {{form.hidden_tag()}}
     <div class="form-group">
@@ -19,11 +26,11 @@ content %}
       {{form.parental__education.label(class='form-group')}}
       {{form.parental__education(class='form-control')}}
     </div>
-     <div class="form-group">
+    <div class="form-group">
       {{form.prep.label(class='form-group')}}
       {{form.prep(class='form-control')}}
     </div>
-     <div class="form-group">
+    <div class="form-group">
       {{form.kind.label(class='form-group')}}
       {{form.kind(class='form-control')}}
     </div>
@@ -32,8 +39,7 @@ content %}
   </form>
   {% if result %}
   <div>
-    <h2>the prediction result</h2>
-    <p>{{result}}</p>
+    <h2>You have {{result}}% chance to pass the test.</h2>
   </div>
   {% endif %}
 </div>
