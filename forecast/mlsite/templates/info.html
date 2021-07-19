@@ -4,20 +4,43 @@ about page
 {% endblock %}
 {% block content %}
   <div class="jumbotron">
-    <h1>Info about our project</h1>
+    <h1>About</h1>
     <p>
-    the data set is from kaggle (https://www.kaggle.com/spscientist/students-performance-in-exams)
-    </br>
+    This project contains data about students performances in multiple domains:
     </p>
+    <ul>
+      <li>Mathematics</li>
+      <li>Reading Ability</li>
+      <li>Writing Ability</li>
+    </ul>
+    <p>
+      We took our data from Kaggle in the following
+      <a href="https://www.kaggle.com/spscientist/students-performance-in-exams">link</a>
+    </p>
+    
    <h3><b> Overview of the Data</b></h3>
    <p>
-      This data set includes scores from three exams and a variety of personal, social, and economic factors that have interaction effects upon them.  
+      This dataset includes scores from three exams and a variety of personal, social, and economic factors that have interaction effects upon them.
     </p>
+    <p>Our goal is to predict whether a student will pass the tests or not.</p>
+    <p>We took under consideration the following arguments:</p>
+    <ol>
+      <li>Subjects Gender</li>
+      <li>Subjects Parents level of education</li>
+      <li>Subjects Kind (which group does the subject belong)</li>
+      <li>Does the subject have eaten lunch?</li>
+      <li>Did the subject took a preparation course for the exams?</li>
+    </ol>
     <div>
-<img src="static\img\passed-gender.png" class="img-fluid" alt="Responsive image">
-<img src="static\img\passed-lunch.png" class="img-fluid" alt="Responsive image">
-<img src="static\img\passed-parent-education.png" class="img-fluid" alt="Responsive image">
-<img src="static\img\passed-test_preparation_course.png" class="img-fluid" alt="Responsive image">
+<h3>Data Visualization From Our Study</h3>
+<p>Subjects' Gender distribution refering the students score:</p>
+<img src="./static/imgs/passed-gender.png" class="img-fluid" alt="Responsive image">
+<p>Subjects' parents level of education refering the students score: </p>
+<img src="./static/imgs/passed-parent-education.png" class="img-fluid" alt="Responsive image">
+<p>The influence of lunch on students scores:</p>
+<img src="./static/imgs/passed-lunch.png" class="img-fluid" alt="Responsive image">
+<p>The influence of taking a preparation course on students scores:</p>
+<img src="./static/imgs/passed-test_preparation_course.png" class="img-fluid" alt="Responsive image">
 
     </div>
   </div>

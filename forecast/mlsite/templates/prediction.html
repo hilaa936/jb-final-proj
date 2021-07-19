@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title%} predictions {% endblock %} {% block
 content %}
 <div class="container">
-  <h2> predict if you pass your exam </h2>
+  <div class="jumbotron">
   <h2>Will you pass the exam?</h2>
   <p>
     In the following section, you will be needed to fill you information,
@@ -10,7 +10,6 @@ content %}
   </p>
   <br />
   <h3>Please fill your information in the following form:</h3>
-
 
   <form method="POST" action="" enctype="multipart/form-data">
     {{form.hidden_tag()}}
@@ -42,6 +41,7 @@ content %}
     <h2>You have {{ "%.2f"|format(result) }}% chance to pass the test.</h2>
   </div>
   {% endif %}
+</div>
 </div>
 
 {% endblock %}
