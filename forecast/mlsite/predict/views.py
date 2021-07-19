@@ -11,7 +11,7 @@ def prediction_page():
     if form.validate_on_submit():
         predictRow = form.getValues()
         result=get_predict(predictRow)
-        resultDisplay=f'{result*100}'
+        resultDisplay=result*100
         return  render_template('prediction.html',form=form, result=resultDisplay)
 
     return render_template('prediction.html',form=form, result=None)

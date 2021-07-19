@@ -39,7 +39,7 @@ content %}
   </form>
   {% if result %}
   <div>
-    <h2>You have {{result}}% chance to pass the test.</h2>
+    <h2>You have {{ "%.2f"|format(result) }}% chance to pass the test.</h2>
   </div>
   {% endif %}
 </div>
